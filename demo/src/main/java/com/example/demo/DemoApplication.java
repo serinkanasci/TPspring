@@ -61,9 +61,9 @@ public class DemoApplication {
 		Cours cours1 = (Cours)fac.getBean("Cours");
 		Cours cours2 = (Cours)fac.getBean("Cours2");
 		Coach patrick = (Coach)fac.getBean("Coach");
-		Objectif obj1 = (Objectif)fac.getBean("Objectif");
-		Objectif obj2 = (Objectif)fac.getBean("Objectif2");
-		Objectif obj3 = (Objectif)fac.getBean("Objectif3");
+		Objectif obj1 = (Objectif)fac.getBean("Objectif1");
+		Objectif obj2 = (Objectif)fac.getBean("Objectif1.2");
+		Objectif obj3 = (Objectif)fac.getBean("Objectif2");
 
 		patrick.addCours(cours1);
 		patrick.addCours(cours2);

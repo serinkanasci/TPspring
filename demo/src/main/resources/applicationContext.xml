@@ -13,11 +13,11 @@
         <constructor-arg value="Plaisant" type="String"></constructor-arg>
         <constructor-arg value="95000" type="int"></constructor-arg>
     </bean>
-    <bean id="Objectif" class="com.example.demo.Objectif">
+    <bean id="Objectif1" class="com.example.demo.Objectif">
         <constructor-arg value="1" type="int"></constructor-arg>
         <constructor-arg value="Remise en forme" type="String"></constructor-arg>
     </bean>
-    <bean id="Objectif2" class="com.example.demo.Objectif">
+    <bean id="Objectif1.2" class="com.example.demo.Objectif">
         <constructor-arg value="2" type="int"></constructor-arg>
         <constructor-arg value="Perte de poids" type="String"></constructor-arg>
     </bean>
@@ -25,7 +25,7 @@
         <constructor-arg value="76" type="int"></constructor-arg>
         <constructor-arg value="Coaching Fitness" type="String"></constructor-arg>
     </bean>
-    <bean id="Objectif3" class="com.example.demo.Objectif">
+    <bean id="Objectif2" class="com.example.demo.Objectif">
         <constructor-arg value="3" type="int"></constructor-arg>
         <constructor-arg value="Gain de masse musculaire" type="String"></constructor-arg>
     </bean>
