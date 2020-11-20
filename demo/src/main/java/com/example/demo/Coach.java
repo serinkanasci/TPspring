@@ -1,4 +1,6 @@
 package com.example.demo;
+import java.sql.*;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,6 +59,37 @@ public class Coach implements Serializable {
         this.codePostal = newCodePostal;
     }
 
+    public void enregistre() throws SQLException {
+
+        String url = "jdbc:postgresql://localhost:57558/tp_spring";
+        String user = "postgres";
+        String password = "root";
+    
+        Connection conn = null;
+        System.out.println("HERE WE ARE");
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("HERE WE ARE 2");
+
+        String SQL = "INSERT INTO Coachs(nom, prenom, codePostal) VALUES (?,?,?)";
+        System.out.println("HERE WE ARE 3");
+        try(PreparedStatement pstmt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS)) 
+        {
+            pstmt.setString(1, this.nom);
+            pstmt.setString(2, this.prenom);
+            pstmt.setInt(3, this.codePostal);
+
+            pstmt.executeUpdate(); 
+            pstmt.close();
+        } 
+
+        conn.close();
+    }
     public void afficher() {
         System.out.println("Nom : " + this.nom + ", Prenom : " + this.prenom + ", Code postal : " + this.codePostal + ", propose les cours : " + coursToString(this.mesCours));
     }

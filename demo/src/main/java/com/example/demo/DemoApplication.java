@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.sql.*;
+
 // // SERIALIZATION
 // import java.io.File;
 // import java.io.FileInputStream;
@@ -31,7 +33,7 @@ public class DemoApplication {
 	// 	return "Hello";
 	// }
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// // SERIALIZATION
 		// // on simplifie le code en retirant la gestion des exceptions
 		// File fichier =  new File("tmp/marin.ser") ;
@@ -54,6 +56,10 @@ public class DemoApplication {
 		// Cours javaSpring = (Cours)ois.readObject() ;
 		// System.out.println(javaSpring) ;
 		SpringApplication.run(DemoApplication.class, args);
+
+
+
+
 
 		Resource r = new ClassPathResource("applicationContext.xml");
 		BeanFactory fac = new XmlBeanFactory(r);
@@ -78,6 +84,8 @@ public class DemoApplication {
 		obj1.afficher();
 		obj2.afficher();
 		obj3.afficher();
+		patrick.enregistre();
+
 
 	}
 
